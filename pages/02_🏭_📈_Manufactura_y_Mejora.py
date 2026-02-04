@@ -43,11 +43,12 @@ for i, app in enumerate(apps_mfg):
     with cols[i % 3]:
         st.info(f"### {app['name']}")
         st.write(app['desc'])
-        st.link_button("Access Platform", app['url'], use_container_width=True)
+        st.link_button("Launch System", app['url'], use_container_width=True)
 
 # Reemplazo de la línea con error por un separador visual y espacio
 st.divider()
 st.markdown('<div style="height: 50px;"></div>', unsafe_allow_html=True)
 
 # Footer de la página (no fijo para que no estorbe el contenido)
+
 st.caption("Developed by Master Engineer Erik Armenta | EA Innovation 2026")
