@@ -28,4 +28,5 @@ for i, app in enumerate(apps):
     with cols[i % 3]:
         st.info(f"**{app['name']}**")
         st.write(app['desc'])
-        st.link_button("Open App", app['url'])
+
+        st.link_button("Launch System", app['url'])
