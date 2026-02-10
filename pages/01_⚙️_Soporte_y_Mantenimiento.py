@@ -41,7 +41,7 @@ apps = [
     {
         "name": "Electric Support DCO",
         "url": "https://soporte-elec-dco.streamlit.app/",
-        "form": "https://forms.gle/Ro6f2aS7YPQw8dDa9",
+        "form": "https://forms.gle/2jYPuWsiELSpJ6Cu9",
         "desc": "Direct electrical maintenance control."
     },
     {
@@ -93,4 +93,5 @@ for i, app in enumerate(apps):
 
 st.divider()
 st.caption("Developed by Master Engineer Erik Armenta | EA Innovation 2026")
+
 
