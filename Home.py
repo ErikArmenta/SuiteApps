@@ -115,7 +115,7 @@ with col_a:
     render_app_card("Kanban System", "Real-time production tracking and flow control.", "https://sistemakanban-eainnovation.streamlit.app/")
 
 with col_b:
-    render_app_card("BOM Reconciliation", "Automated SAP vs Platform BOM comparison engine.", "https://bom-reconciliation-app-eainnovation.streamlit.app/")
+    render_app_card("Systems OEE", "Automated OEE real data base.", "https://sistema-oee-ea.streamlit.app/")
 
 with col_c:
     render_app_card("Digital Gage", "High-precision digital metrology and calibration tracking.", "https://gagedigital-ea.streamlit.app/")
@@ -157,4 +157,5 @@ st.markdown(f"""
     <div class="footer">
         Developed by <b>Master Engineer Erik Armenta</b> | © 2026 EA Innovation | Industrial Engineering Solutions
     </div>
+
     """, unsafe_allow_html=True)
