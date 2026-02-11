@@ -41,7 +41,14 @@ apps_mfg = [
         "url": "https://bom-reconciliation-app-eainnovation.streamlit.app/",
         "form": None,
         "desc": "Automated Bill of Materials comparison between SAP and Engineering."
+    },
+    {
+        "name": "Systems OEE",
+        "url": "https://sistema-oee-ea.streamlit.app/",
+        "form": None,
+        "desc": "Automated OEE real data base."
     }
+
 ]
 
 # Renderizado en columnas con contenedores para un look profesional
@@ -68,4 +75,5 @@ st.markdown('<div style="height: 50px;"></div>', unsafe_allow_html=True)
 
 # Footer
 st.caption("Developed by Master Engineer Erik Armenta | EA Innovation 2026")
+
 
