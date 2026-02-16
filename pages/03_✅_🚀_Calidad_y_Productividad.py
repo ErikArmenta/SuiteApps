@@ -1,28 +1,8 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Feb  4 10:26:47 2026
-
-@author: acer
-"""
-
 import streamlit as st
 
 st.set_page_config(page_title="Quality & Productivity", layout="wide")
 
-# Estilo para mantener consistencia y espaciado de botones
-st.markdown("""
-    <style>
-    .stAlert { background-color: #1e1e2e; border: 1px solid #10b981; }
-    div.stButton > button {
-        margin-bottom: 5px;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
-st.title("🎯 Quality & Productivity Control")
-st.write("Metrology, inspection systems, and real-time quality dashboards.")
-
-# Lista de apps con soporte para múltiples formularios
+# --- 1. LISTA DE DATOS ORIGINAL ---
 apps_quality = [
     {
         "name": "Gage Track",
@@ -59,9 +39,43 @@ apps_quality = [
     }
 ]
 
-# Renderizado en columnas (Grid de 3)
+# --- 2. LÓGICA DE CALLBACK (Sin borrar nada) ---
+def filtrar_calidad_callback():
+    query = st.session_state.search_quality.lower()
+    # Filtramos por nombre o descripción para mayor precisión
+    st.session_state.quality_filtrado = [
+        app for app in apps_quality 
+        if query in app['name'].lower() or query in app['desc'].lower()
+    ]
+
+# Inicialización del estado
+if 'quality_filtrado' not in st.session_state:
+    st.session_state.quality_filtrado = apps_quality
+
+# --- 3. ESTILOS Y TÍTULOS ---
+st.markdown("""
+    <style>
+    .stAlert { background-color: #1e1e2e; border: 1px solid #10b981; }
+    div.stButton > button {
+        margin-bottom: 5px;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+st.title("🎯 Quality & Productivity Control")
+st.write("Metrology, inspection systems, and real-time quality dashboards.")
+
+# Buscador con Callback
+st.text_input(
+    "🔍 Buscar en sistemas de calidad:", 
+    key="search_quality", 
+    on_change=filtrar_calidad_callback,
+    placeholder="Ej: 'Gage', 'LPA', 'QR'..."
+)
+
+# --- 4. RENDERIZADO DINÁMICO (Basado en el Callback) ---
 cols = st.columns(3)
-for i, app in enumerate(apps_quality):
+for i, app in enumerate(st.session_state.quality_filtrado):
     with cols[i % 3]:
         with st.container(border=True):
             st.success(f"### {app['name']}")
@@ -83,3 +97,4 @@ st.markdown('<div style="height: 50px;"></div>', unsafe_allow_html=True)
 
 # Footer de la página
 st.caption("Developed by Master Engineer Erik Armenta | EA Innovation 2026")
+
