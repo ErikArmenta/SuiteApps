@@ -9,20 +9,7 @@ import streamlit as st
 
 st.set_page_config(page_title="Manufacturing & Continuous Improvement", layout="wide")
 
-# Estilo para mantener consistencia y espaciado de botones
-st.markdown("""
-    <style>
-    .stAlert { background-color: #1e293b; border: 1px solid #3b82f6; }
-    div.stButton > button:first-child {
-        margin-bottom: 5px;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
-st.title("🏭 Manufacturing & Continuous Improvement")
-st.write("Tools focused on operational excellence and process optimization.")
-
-# Lista de apps con soporte para formularios
+# --- 1. LISTA DE DATOS ORIGINAL ---
 apps_mfg = [
     {
         "name": "5S & Continuous Improvement",
@@ -41,19 +28,47 @@ apps_mfg = [
         "url": "https://bom-reconciliation-app-eainnovation.streamlit.app/",
         "form": None,
         "desc": "Automated Bill of Materials comparison between SAP and Engineering."
-    },
-    {
-        "name": "Systems OEE",
-        "url": "https://sistema-oee-ea.streamlit.app/",
-        "form": None,
-        "desc": "Automated OEE real data base."
     }
-
 ]
 
-# Renderizado en columnas con contenedores para un look profesional
+# --- 2. LÓGICA DE CALLBACK (Sin borrar nada) ---
+def filtrar_mfg_callback():
+    # Buscamos en el nombre o en la descripción
+    query = st.session_state.search_mfg.lower()
+    st.session_state.mfg_filtrado = [
+        app for app in apps_mfg 
+        if query in app['name'].lower() or query in app['desc'].lower()
+    ]
+
+# Inicialización del estado de sesión
+if 'mfg_filtrado' not in st.session_state:
+    st.session_state.mfg_filtrado = apps_mfg
+
+# --- 3. ESTILOS Y TÍTULOS ---
+st.markdown("""
+    <style>
+    .stAlert { background-color: #1e293b; border: 1px solid #3b82f6; }
+    div.stButton > button:first-child {
+        margin-bottom: 5px;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+st.title("🏭 Manufacturing & Continuous Improvement")
+st.write("Tools focused on operational excellence and process optimization.")
+
+# Buscador con Callback
+st.text_input(
+    "🔍 Filtrar herramientas de mejora:", 
+    key="search_mfg", 
+    on_change=filtrar_mfg_callback,
+    placeholder="Ej: '5S', 'BOM', 'SAP'..."
+)
+
+# --- 4. RENDERIZADO DINÁMICO ---
 cols = st.columns(3)
-for i, app in enumerate(apps_mfg):
+# Iteramos sobre la lista filtrada por el callback
+for i, app in enumerate(st.session_state.mfg_filtrado):
     with cols[i % 3]:
         with st.container(border=True):
             st.info(f"### {app['name']}")
@@ -66,7 +81,6 @@ for i, app in enumerate(apps_mfg):
             if app['form']:
                 st.link_button("📝 Open 5S Audit Form", app['form'], use_container_width=True)
             else:
-                # Mantener balance visual
                 st.write("")
 
 # Separador y espacio final
@@ -75,5 +89,6 @@ st.markdown('<div style="height: 50px;"></div>', unsafe_allow_html=True)
 
 # Footer
 st.caption("Developed by Master Engineer Erik Armenta | EA Innovation 2026")
+
 
 
