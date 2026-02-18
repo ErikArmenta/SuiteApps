@@ -15,7 +15,7 @@ st.set_page_config(page_title="EA Innovation Suite", page_icon="🚀", layout="w
 todas_las_apps = [
     {"title": "Kanban System", "desc": "Real-time production tracking and flow control.", "url": "https://sistemakanban-eainnovation.streamlit.app/"},
     {"title": "Systems OEE", "desc": "Automated OEE real data base.", "url": "https://sistema-oee-ea.streamlit.app/"},
-    {"title": "Digital Gage", "desc": "High-precision digital metrology and calibration tracking.", "url": "https://gagedigital-ea.streamlit.app/"},
+    {"title": "Andon Monitor System", "desc": "Downtime analysis and root cause visibility", "url": "https://maquinascaidas-ea-innovation.streamlit.app/"},
 ]
 
 def filtrar_suite_callback():
@@ -129,5 +129,6 @@ st.markdown(f"""
         Developed by <b>Master Engineer Erik Armenta</b> | © 2026 EA Innovation | Industrial Engineering Solutions
     </div>
     """, unsafe_allow_html=True)
+
 
 
