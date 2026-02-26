@@ -9,7 +9,7 @@ import streamlit as st
 
 st.set_page_config(page_title="Manufacturing & Continuous Improvement", layout="wide")
 
-# --- 1. LISTA DE DATOS ORIGINAL ---
+# --- 1. LISTA DE DATOS ORIGINAL (CON NUEVA APP AÑADIDA) ---
 apps_mfg = [
     {
         "name": "5S & Continuous Improvement",
@@ -28,6 +28,12 @@ apps_mfg = [
         "url": "https://bom-reconciliation-app-eainnovation.streamlit.app/",
         "form": None,
         "desc": "Automated Bill of Materials comparison between SAP and Engineering."
+    },
+    {
+        "name": "Training Validation System",
+        "url": "https://train-validation-ea-innovation.streamlit.app",
+        "form": None,
+        "desc": "Real-time operator competency verification and automated exception logging."
     }
 ]
 
