@@ -74,7 +74,7 @@ st.divider()
 
 # 4. Sección de Métricas
 m1, m2, m3, m4 = st.columns(4)
-m1.metric("Apps Desplegadas", "17", "Active")
+m1.metric("Apps Desplegadas", "18", "Active")
 m2.metric("Disponibilidad", "99.9%", "Stable")
 m3.metric("Departamentos", "3", "Engineering")
 m4.metric("Región", "Cd. Juárez", "MX")
@@ -129,6 +129,7 @@ st.markdown(f"""
         Developed by <b>Master Engineer Erik Armenta</b> | © 2026 EA Innovation | Industrial Engineering Solutions
     </div>
     """, unsafe_allow_html=True)
+
 
 
 
