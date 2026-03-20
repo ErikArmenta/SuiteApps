@@ -34,6 +34,12 @@ apps_mfg = [
         "url": "https://train-validation-ea-innovation.streamlit.app",
         "form": None,
         "desc": "Real-time operator competency verification and automated exception logging."
+    },
+    {
+        "name": "MEH Process Simulator",
+        "url": "https://mehsimulador-ea-innovation.streamlit.app",
+        "form": None,
+        "desc": "Real-time Process Simulator"
     }
 ]
 
