@@ -74,7 +74,7 @@ st.divider()
 
 # 4. Sección de Métricas
 m1, m2, m3, m4 = st.columns(4)
-m1.metric("Apps Desplegadas", "19", "Active")
+m1.metric("Apps Desplegadas", "20", "Active")
 m2.metric("Disponibilidad", "99.9%", "Stable")
 m3.metric("Departamentos", "3", "Engineering")
 m4.metric("Región", "Cd. Juárez", "MX")
