@@ -9,7 +9,7 @@ import streamlit as st
 
 st.set_page_config(page_title="Support & Maintenance", layout="wide")
 
-# --- 1. LISTA DE DATOS (Actualizada con Energy Analyzer) ---
+# --- 1. LISTA DE DATOS (Actualizada con Energy Analyzer y Reporteo OEE) ---
 apps = [
     {"name": "Energy Analyzer", "url": "https://energy-analyzer-eainnovation.streamlit.app", "form": None, "desc": "Industrial energy analyzer, extracting data from HOBO datalogger."},
     {"name": "Helium Calculator", "url": "https://heliumcalculete-eainnovation.streamlit.app/", "form": "https://forms.gle/5Km92vqXKLQxEfma6", "desc": "Specialized gas usage calculation."},
@@ -19,7 +19,8 @@ apps = [
     {"name": "Electric Support DCO", "url": "https://soporte-elec-dco.streamlit.app/", "form": "https://forms.gle/Ro6f2aS7YPQw8dDa9", "desc": "Direct electrical maintenance control."},
     {"name": "Maintenance Dashboard", "url": "https://mantttodash-eainnovation.streamlit.app/", "form": "https://forms.gle/28RZ3jNgcAps21RN8", "desc": "Overall maintenance KPIs."},
     {"name": "Kanban System", "url": "https://sistemakanban-eainnovation.streamlit.app/", "form": None, "desc": "Flow and task management."},
-    {"name": "Sensor Management", "url": "https://sistemagestionsensores.streamlit.app/", "form": None, "desc": "Industrial sensor tracking."}
+    {"name": "Sensor Management", "url": "https://sistemagestionsensores.streamlit.app/", "form": None, "desc": "Industrial sensor tracking."},
+    {"name": "Reporteo OEE", "url": "https://reporteoee.streamlit.app", "form": None, "desc": "Automated reporting with drill-down functionality for OEE analysis."}
 ]
 
 # --- 2. LÓGICA DE CALLBACK ---
