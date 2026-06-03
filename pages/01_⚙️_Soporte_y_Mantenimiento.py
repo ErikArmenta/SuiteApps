@@ -15,7 +15,6 @@ apps = [
     {"name": "Helium Calculator", "url": "https://heliumcalculete-eainnovation.streamlit.app/", "form": "https://forms.gle/5Km92vqXKLQxEfma6", "desc": "Specialized gas usage calculation."},
     {"name": "Excel Automator", "url": "https://automatizadorexcel.streamlit.app/", "form": None, "desc": "Data processing and automation."},
     {"name": "Downtime Dashboard", "url": "https://dashboard-tiempo-muerto-soporteelectrico.streamlit.app/", "form": None, "desc": "Electrical support metrics."},
-    {"name": "Leak Hunter", "url": "https://gemelodigital2d.streamlit.app/", "form": None, "desc": "Visual representation of plant assets."},
     {"name": "Electric Support DCO", "url": "https://soporte-elec-dco.streamlit.app/", "form": "https://forms.gle/Ro6f2aS7YPQw8dDa9", "desc": "Direct electrical maintenance control."},
     {"name": "Maintenance Dashboard", "url": "https://mantttodash-eainnovation.streamlit.app/", "form": "https://forms.gle/28RZ3jNgcAps21RN8", "desc": "Overall maintenance KPIs."},
     {"name": "Kanban System", "url": "https://sistemakanban-eainnovation.streamlit.app/", "form": None, "desc": "Flow and task management."},
