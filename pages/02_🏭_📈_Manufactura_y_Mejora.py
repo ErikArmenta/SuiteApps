@@ -14,7 +14,7 @@ apps_mfg = [
     {
         "name": "5S & Continuous Improvement",
         "url": "https://mejoracontinua-5s-auditoria-eainnovation.streamlit.app/",
-        "form": "https://forms.gle/47KvPfGfoMakbzNt8",
+        "form": "None",
         "desc": "Audits and standard compliance tracking."
     },
     {
