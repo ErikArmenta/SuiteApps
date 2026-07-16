@@ -89,11 +89,7 @@ for i, app in enumerate(st.session_state.mfg_filtrado):
             # Botón principal de la App
             st.link_button("🚀 Launch System", app['url'], use_container_width=True)
 
-            # Botón de Formulario (Solo si existe en la lista)
-            if app['form']:
-                st.link_button("📝 Open 5S Audit Form", app['form'], use_container_width=True)
-            else:
-                st.write("")
+
 
 # Separador y espacio final
 st.divider()
